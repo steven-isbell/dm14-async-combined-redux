@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 
 import Card from '../Card/Card';
@@ -14,7 +13,10 @@ class List extends Component {
       <div style={{ padding: '10px' }}>
         {this.props.isLoading && (
           <div>
-            <img src="https://24.media.tumblr.com/f678ce38eb896bc1d4aaa911958af087/tumblr_n2eccv6Dev1rgpzseo1_1280.gif" />
+            <img
+              src="https://24.media.tumblr.com/f678ce38eb896bc1d4aaa911958af087/tumblr_n2eccv6Dev1rgpzseo1_1280.gif"
+              alt="loader"
+            />
           </div>
         )}
         {this.props.people.map((person, i) => (
