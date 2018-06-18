@@ -12,7 +12,8 @@ export function getPeople() {
 const initialState = {
   people: [],
   selected: {},
-  isLoading: false
+  isLoading: false,
+  errMessage: ''
 };
 
 export default function userReducer(state = initialState, action) {
@@ -29,6 +30,12 @@ export default function userReducer(state = initialState, action) {
         isLoading: false,
         people: action.payload.data.results
       };
+    case `${GET_PEOPLE}_REJECTED`:
+    return {
+      ...state,
+      isLoading: false,
+      errMessage: action.payload.message
+    };
     default:
       return state;
   }
