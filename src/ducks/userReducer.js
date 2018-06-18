@@ -31,11 +31,11 @@ export default function userReducer(state = initialState, action) {
         people: action.payload.data.results
       };
     case `${GET_PEOPLE}_REJECTED`:
-    return {
-      ...state,
-      isLoading: false,
-      errMessage: action.payload.message
-    };
+      return {
+        ...state,
+        isLoading: false,
+        errMessage: action.payload.message
+      };
     default:
       return state;
   }
